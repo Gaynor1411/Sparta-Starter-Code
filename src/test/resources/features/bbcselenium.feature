@@ -12,6 +12,13 @@ Feature: Basic selenium tests on the BBC website
     Given I am on the Sign-In page
     When I input username "Dave@mail.com"
     And I input password "abcd"
-    Then I receive an error of "xyz"
+    Then I receive an error of "Sorry, that password is too short. It needs to be eight characters or more."
+
+  Scenario: I can input invalid user name that receives an error for incorrect format
+    Given I am on the Sign-In page
+    When I input username "Dave@"
+    And I input password "abcd"
+    Then I receive a user name error "Sorry, that email doesn’t look right. Please check it's a proper email."
+
 
 

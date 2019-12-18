@@ -14,6 +14,7 @@ public class BbcSignInPage {
     private By passwordFieldID = By.id("password-input");
     private By submitButtonID = By.id("submit-button");
     private By incorrectPasswordErrorID = By.id("form-message-password");
+    private By incorrectUserNameErrorID = By.id("form-message-username");
     private String errorText = "Sorry, that password isn't valid. Please include a letter.";
 
     public BbcSignInPage(WebDriver driver) {
@@ -28,9 +29,7 @@ public class BbcSignInPage {
         driver.findElement(usernameFieldID).sendKeys(name);
     }
 
-    public void inputPassword(String password){
-        driver.findElement(passwordFieldID).sendKeys(password);
-    }
+    public void inputPassword(String password){ driver.findElement(passwordFieldID).sendKeys(password); }
 
     public void clicksubmitButton(){
         driver.findElement(submitButtonID).click();
@@ -38,6 +37,14 @@ public class BbcSignInPage {
 
     public String getPasswordErrorText(){
         return driver.findElement(incorrectPasswordErrorID).getText();
+    }
+
+    public String getUserNameErrorText(){
+        return driver.findElement(incorrectUserNameErrorID).getText();
+    }
+
+    public void exitChromeWebDriver(){
+        exitChromeWebDriver();
     }
 
     public String getSignInPageURL() { return signInPageURL;  }
@@ -50,7 +57,5 @@ public class BbcSignInPage {
     public void submitButtonIsVisible(){
        Assert.assertTrue(driver.findElement(submitButtonID).isDisplayed());
     }
-
-
 
 }

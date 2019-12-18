@@ -4,7 +4,6 @@ import BbcWebsite.bbcPages.BbcHomePage;
 import BbcWebsite.bbcPages.BbcSignInPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.concurrent.TimeUnit;
 
 public class BbcSite {
